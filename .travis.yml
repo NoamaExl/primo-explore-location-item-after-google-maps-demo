@@ -3,7 +3,8 @@
   "node_js": "node",
   "install": [
     "npm install",
-    "npm install -g gulp"
+    "npm install -g gulp",
+    "./node_modules/primo-explore-devenv/npm install"
   ],
   "before_script": [
     "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./primo-explore-location-item-after --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after",
