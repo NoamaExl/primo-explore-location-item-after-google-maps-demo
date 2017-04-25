@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A Demo fot SST with protractor",
   "author": "noamamit92",
-  "devDependencies": {
-    "primo-explore-devenv": "1.0.0"
+  "dependencies": {
+    "primo-explore-devenv": "1.0.1"
   }
 }
