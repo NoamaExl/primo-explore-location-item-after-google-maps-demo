@@ -7,6 +7,8 @@ exports.config = {
         defaultTimeoutInterval: 100000,
         isVerbose: true
     },
-    
+    capabilities: {
+        'browserName': 'firefox'
+    }    
 
 };
