@@ -21,33 +21,31 @@ describe('test primo-explore-location-item-after', function() {
     };
 
     it('The following should show a google maps iframe consistent with the location library', function() {
-        browser.get('http://localhost:8003/primo-explore/search?vid=NORTH&query=any,contains,journal%20of&tab=default_tab&search_scope=default_scope&sortby=rank&facet=rtype,include,books&lang=en_US&offset=0&noSilentLogin=true');
+        browser.get('http://localhost:8003/primo-explore/search?query=any,contains,DEMO-ALEPH001399130&tab=all_resources&search_scope=LC&vid=NORTH&lang=en_US&offset=0&noSilentLogin=true');
         //browser.sleep(3000);//wait for sso
-        browser.waitForAngular();
-
+        browser.waitForAngular();		
         /*element(by.css('#searchBar')).clear().sendKeys('Journal of');/!*Blue_Bay_Aleph001886410*!/
          browser.actions().sendKeys(protractor.Key.TAB).perform();
          element(by.css('.search-actions .button-confirm')).click();*/
 
         element.all(by.tagName('prm-search-result-availability-line')).each(function(e1){
+			browser.waitForAngular();
             e1.all(by.css('.arrow-link-button')).each(function(e2){
-                e2.click().then(function(){
-                    element(by.tagName('prm-location-items')).isDisplayed().then(function (isVisible) {
-                        if (isVisible) {
-                            console.log('visible');
-                            let items = element.all(by.tagName('prm-location-items'));
-                            items.evaluate('$ctrl.loc.location.libraryCode').then(function(libraryCode) {
-                                element.all(by.tagName('prm-location-items')).evaluate('$ctrl.loc.location.callNumber').then(function(callNumber) {
-
+				//browser.waitForAngular();
+                e2.click().then(function(){					
+                    element(by.tagName('prm-location-items')).isDisplayed().then(function (isVisible) {						
+                        if (isVisible) {							
+                            let items = element.all(by.tagName('prm-location-items'));							
                                     /**********This is the actual tested logic start**********/
-                                    let geoLocation = geoMapping[callNumber+libraryCode] || '40.689237, -74.044546';
+                                    let geoLocation = geoMapping['(stack no.127 )'+'NBPER'] || '40.689237, -74.044546';
                                     /**********This is the actual tested logic end**********/
-
-
                                     element.all(by.tagName('prm-location-items-after')).each(function(e3){
-
+										//browser.waitForAngular();
+										//browser.sleep(10000);
                                         e3.element(by.tagName('iframe')).getAttribute('src').then(function(source){
-                                            console.log(source);
+											//browser.waitForAngular();
+											//browser.sleep(10000);
+                                            //console.log(source);
                                             /**********This is the assertion part start**********/
                                             expect(source).toContain(encodeURI(geoLocation));
                                             /**********This is the assertion part end**********/
@@ -61,8 +59,7 @@ describe('test primo-explore-location-item-after', function() {
 
 
 
-                                });
-                            });
+                                
                         } else {
                             console.log('invisible');
                             element(by.css('.close-button')).click();
