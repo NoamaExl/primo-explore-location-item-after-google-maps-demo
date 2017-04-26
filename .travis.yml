@@ -7,7 +7,11 @@
     "npm install -g gulp"
   ],
   "before_script": [
-    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./ --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo",
+    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./css --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/css",
+    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./img --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/img",
+    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./js --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/js",
+    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./html --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/html",
+    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./tests --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/test",
     "./node_modules/primo-explore-devenv/gulp run --view primo-explore-location-item-after-google-maps-demo --proxy http://primo-demo.exlibrisgroup.com:1701",
     "./node_modules/primo-explore-devenv/gulp custom-css",
     "./node_modules/primo-explore-devenv/gulp custom-js"
