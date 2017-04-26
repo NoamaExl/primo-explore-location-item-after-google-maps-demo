@@ -50,8 +50,7 @@ describe('test primo-explore-location-item-after', function() {
                                             expect(source).toContain(encodeURI(geoLocation));
                                             /**********This is the assertion part end**********/
 
-                                            element(by.css('.close-button')).click();//continue iteration
-                                            browser.sleep(3000);//wait for dialog
+                                            
                                         });
 
 
