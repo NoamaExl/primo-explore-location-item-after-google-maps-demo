@@ -2,7 +2,8 @@
   "language": "node_js",
   "node_js": "node",
   "install": [
-    "npm install --verbose",
+    "npm install",
+    "npm --prefix ./node_modules/primo-explore-devenv install ./node_modules/primo-explore-devenv",
     "npm install -g gulp"
   ],
   "before_script": [
