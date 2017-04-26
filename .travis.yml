@@ -5,7 +5,7 @@
     "npm install",
     "npm --prefix ./node_modules/primo-explore-devenv install ./node_modules/primo-explore-devenv",
     "npm install -g gulp",
-    "npm install -g protractor"
+    "npm install -g protractor@5.0.0"
   ],
   "before_script": [
     "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./css --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/css",
