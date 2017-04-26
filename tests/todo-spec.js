@@ -21,7 +21,7 @@ describe('test primo-explore-location-item-after', function() {
     };
 
     it('The following should show a google maps iframe consistent with the location library', function() {
-        browser.get('http://primo-demo.exlibrisgroup.com:1701/primo-explore/search?vid=NORTH&query=any,contains,journal%20of&tab=default_tab&search_scope=default_scope&sortby=rank&facet=rtype,include,books&lang=en_US&offset=0&noSilentLogin=true');
+        browser.get('http://localhost:8003/primo-explore/search?vid=NORTH&query=any,contains,journal%20of&tab=default_tab&search_scope=default_scope&sortby=rank&facet=rtype,include,books&lang=en_US&offset=0&noSilentLogin=true');
         //browser.sleep(3000);//wait for sso
         browser.waitForAngular();
 
