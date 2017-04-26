@@ -7,7 +7,7 @@
     "npm install -g gulp"
   ],
   "before_script": [
-    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./primo-explore-location-item-after-google-maps-demo --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo",
+    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./ --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo",
     "./node_modules/primo-explore-devenv/gulp run --view primo-explore-location-item-after-google-maps-demo --proxy http://primo-demo.exlibrisgroup.com:1701",
     "./node_modules/primo-explore-devenv/gulp custom-css",
     "./node_modules/primo-explore-devenv/gulp custom-js"
