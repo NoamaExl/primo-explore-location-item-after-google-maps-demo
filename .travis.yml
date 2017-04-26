@@ -20,7 +20,8 @@
     "sh -e /etc/init.d/xvfb start",
     "sleep 3"
   ],
-  "script": [    
+  "script": [
+    "webdriver-manager update",
     "sleep 25",
     "protractor ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/conf.js"
   ],
