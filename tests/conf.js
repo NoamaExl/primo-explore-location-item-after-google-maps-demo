@@ -11,14 +11,7 @@ exports.config = {
         /*onPrepare: function () {
             browser.executeScript('window.name = "NG_ENABLE_DEBUG_INFO"');
         },*/
-        'browserName': 'chrome',
-        "chromeOptions": {
-            binary: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
-            args: [
-                '--start-maximized'
-            ],
-            extensions: [],
-        }
+        'browserName': 'chrome'        
     }
 
 };
