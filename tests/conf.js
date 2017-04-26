@@ -7,11 +7,6 @@ exports.config = {
         defaultTimeoutInterval: 100000,
         isVerbose: true
     },
-    capabilities: {
-        /*onPrepare: function () {
-            browser.executeScript('window.name = "NG_ENABLE_DEBUG_INFO"');
-        },*/
-        'browserName': 'chrome'        
-    }
+    
 
 };
