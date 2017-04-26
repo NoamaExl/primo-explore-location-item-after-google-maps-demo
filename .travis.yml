@@ -17,7 +17,7 @@
     "gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js custom-js"
   ],
   "script": [
-    "- xvfb-run -s '-screen 0 1280x1024x16' gulp protractor:ci --browser firefox"
+    "xvfb-run -s '-screen 0 1280x1024x16' gulp protractor:ci --browser firefox"
   ],
   "os": "linux"
 }
