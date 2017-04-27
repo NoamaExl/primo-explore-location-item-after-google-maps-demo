@@ -10,8 +10,8 @@ exports.config = {
         const protractorImageComparison = require('protractor-image-comparison');
         browser.protractorImageComparison = new protractorImageComparison(
             {
-                baselineFolder: '',
-                screenshotPath: '',
+                baselineFolder: '/home/travis/build/noamamit92/primo-explore-location-item-after-google-maps-demo/node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/',
+                screenshotPath: '/home/travis/build/noamamit92/primo-explore-location-item-after-google-maps-demo/node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/',
                 ignoreColors: true,
                 formatImageName:'base'
             }
