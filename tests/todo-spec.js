@@ -26,7 +26,7 @@ describe('test primo-explore-location-item-after', function() {
         browser.waitForAngular();
         browser.sleep(10000);
 
-        expect(browser.protractorImageComparison.checkScreen('locationsMaps')).not.toBeGreaterThan(0.7);
+        expect(browser.protractorImageComparison.checkScreen('locationsMaps')).not.toBeCloseTo(1);
     });
 
 
