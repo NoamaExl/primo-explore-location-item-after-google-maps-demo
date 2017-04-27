@@ -32,7 +32,7 @@ describe('test primo-explore-location-item-after', function() {
 
 
     it('The following should show a google maps iframe consistent with the location library', function() {
-        browser.get('http://localhost:8003/primo-explore/search?query=any,contains,DEMO-ALEPH001399130&tab=all_resources&search_scope=LC&vid=NORTH&lang=en_US&offset=0&noSilentLogin=true');
+        browser.get('http://localhost:8003/primo-explore/search?query=any,contains'+browser.params.query+'&vid='+browser.params.vid+'&lang=en_US&offset=0&noSilentLogin=true');
         //browser.sleep(3000);//wait for sso
         browser.waitForAngular();
         /*element(by.css('#searchBar')).clear().sendKeys('Journal of');/!*Blue_Bay_Aleph001886410*!/
