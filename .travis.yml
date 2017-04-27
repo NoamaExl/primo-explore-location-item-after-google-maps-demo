@@ -23,7 +23,7 @@
   "script": [
     "webdriver-manager update",
     "sleep 25",
-    "protractor ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/conf.js"
+    "protractor ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/conf.js --params.query DEMO-ALEPH001399130 --params.vid NORTH --params.loc \"(stack no.127 )NBPER\""
   ],
   "os": "linux"
 }
