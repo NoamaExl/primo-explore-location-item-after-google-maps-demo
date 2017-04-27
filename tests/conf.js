@@ -1,5 +1,6 @@
 
 exports.config = {
+    
     onPrepare: function() {
         // implicit and page load timeouts
         browser.manage().timeouts().pageLoadTimeout(40000);
