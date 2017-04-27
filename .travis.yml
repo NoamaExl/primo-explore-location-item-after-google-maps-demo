@@ -12,7 +12,7 @@
     "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./img --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/img",
     "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./js --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/js",
     "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./html --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/html",
-    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./tests --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests",    
+    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./tests/** --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests",    
     "gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js run --view primo-explore-location-item-after-google-maps-demo --proxy http://primo-demo.exlibrisgroup.com:1701 &",
     "gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js custom-css",
     "gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js custom-js",
