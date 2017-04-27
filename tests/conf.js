@@ -12,7 +12,8 @@ exports.config = {
             {
                 baselineFolder: './',
                 screenshotPath: './',
-                ignoreColors: true
+                ignoreColors: true,
+                formatImageName:'base'
             }
         );
 
