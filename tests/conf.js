@@ -10,8 +10,8 @@ exports.config = {
         const protractorImageComparison = require('protractor-image-comparison');
         browser.protractorImageComparison = new protractorImageComparison(
             {
-                baselineFolder: 'baseline',
-                screenshotPath: 'screenshots',
+                baselineFolder: './baseline',
+                screenshotPath: './screenshots',
                 ignoreColors: true
             }
         );
