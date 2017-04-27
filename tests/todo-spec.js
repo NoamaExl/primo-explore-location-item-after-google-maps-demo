@@ -1,4 +1,5 @@
 const _flatten  = require('lodash/flatten');
+const protractorImageComparison = require('protractor-image-comparison');
 
 describe('test primo-explore-location-item-after', function() {
     let geoMapping = {
@@ -20,47 +21,47 @@ describe('test primo-explore-location-item-after', function() {
         '(Quarto QD1 .J9425x )NMAGR': '52.939000, -1.197417'
     };
 
+    it('General snapshot regression tests', function() {
+        browser.get('http://localhost:8003/primo-explore/fulldisplay?docid=DEMO-ALEPH001399130&context=L&vid=NORTH&lang=en_US&search_scope=LC&adaptor=Local%20Search%20Engine&tab=all_resources&query=any,contains,DEMO-ALEPH001399130&sortby=rank&offset=0');
+        browser.waitForAngular();
+        browser.sleep(10000);
+
+        expect(browser.protractorImageComparison.checkScreen('locationsMaps')).not.toBeGreaterThan(0.7);
+    });
+
+
+
     it('The following should show a google maps iframe consistent with the location library', function() {
         browser.get('http://localhost:8003/primo-explore/search?query=any,contains,DEMO-ALEPH001399130&tab=all_resources&search_scope=LC&vid=NORTH&lang=en_US&offset=0&noSilentLogin=true');
         //browser.sleep(3000);//wait for sso
-        browser.waitForAngular();		
+        browser.waitForAngular();
         /*element(by.css('#searchBar')).clear().sendKeys('Journal of');/!*Blue_Bay_Aleph001886410*!/
          browser.actions().sendKeys(protractor.Key.TAB).perform();
          element(by.css('.search-actions .button-confirm')).click();*/
 
         element.all(by.tagName('prm-search-result-availability-line')).each(function(e1){
-			browser.waitForAngular();
+            browser.waitForAngular();
             e1.all(by.css('.arrow-link-button')).each(function(e2){
-				//browser.waitForAngular();
-                e2.click().then(function(){					
-                    element(by.tagName('prm-location-items')).isDisplayed().then(function (isVisible) {						
-                        if (isVisible) {							
-                            let items = element.all(by.tagName('prm-location-items'));							
-                                    /**********This is the actual tested logic start**********/
-                                    let geoLocation = geoMapping['(stack no.127 )'+'NBPER'] || '40.689237, -74.044546';
-                                    /**********This is the actual tested logic end**********/
-                                    element.all(by.tagName('prm-location-items-after')).each(function(e3){
-										//browser.waitForAngular();
-										//browser.sleep(10000);
-                                        e3.element(by.tagName('iframe')).getAttribute('src').then(function(source){
-											//browser.waitForAngular();
-											//browser.sleep(10000);
-                                            //console.log(source);
-                                            /**********This is the assertion part start**********/
-                                            expect(source).toContain(encodeURI(geoLocation));
-                                            /**********This is the assertion part end**********/
-
-                                            
-                                        });
-
-
-                                    });
-
-
-
-                                
+                e2.click().then(function(){
+                    element(by.tagName('prm-location-items')).isDisplayed().then(function (isVisible) {
+                        if (isVisible) {
+                            let items = element.all(by.tagName('prm-location-items'));
+                            /**********This is the actual tested logic start**********/
+                            let geoLocation = geoMapping['(stack no.127 )'+'NBPER'] || '40.689237, -74.044546';
+                            /**********This is the actual tested logic end**********/
+                            element.all(by.tagName('prm-location-items-after')).each(function(e3){
+                                //browser.waitForAngular();
+                                //browser.sleep(10000);
+                                e3.element(by.tagName('iframe')).getAttribute('src').then(function(source){
+                                    //browser.waitForAngular();
+                                    //browser.sleep(10000);
+                                    console.log(source);
+                                    /**********This is the assertion part start**********/
+                                    expect(source).toContain(encodeURI(geoLocation));
+                                    /**********This is the assertion part end**********/
+                                });
+                            });
                         } else {
-                            console.log('invisible');
                             element(by.css('.close-button')).click();
                             browser.sleep(3000);//wait for dialog
                         }
@@ -71,4 +72,11 @@ describe('test primo-explore-location-item-after', function() {
             });
         })
     });
+
+
+
+
+
+
+
 });

@@ -1,3 +1,4 @@
+
 exports.config = {
     onPrepare: function() {
         // implicit and page load timeouts
@@ -6,8 +7,16 @@ exports.config = {
 
         // for non-angular page
         browser.ignoreSynchronization = true;
+        const protractorImageComparison = require('protractor-image-comparison');
+        browser.protractorImageComparison = new protractorImageComparison(
+            {
+                baselineFolder: 'baseline',
+                screenshotPath: 'screenshots',
+                ignoreColors: true
+            }
+        );
 
-    
+
     },
     specs: ['todo-spec.js'],
     allScriptsTimeout: 100000,
@@ -18,7 +27,17 @@ exports.config = {
         isVerbose: true
     },
     capabilities: {
-        'browserName': 'firefox'
-    }    
+        /*onPrepare: function () {
+         browser.executeScript('window.name = "NG_ENABLE_DEBUG_INFO"');
+         },*/
+        'browserName': 'firefox',
+        /*"chromeOptions": {
+         binary: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+         args: [
+         '--start-maximized'
+         ],
+         extensions: [],
+         }*/
+    }
 
 };
