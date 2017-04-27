@@ -13,8 +13,8 @@ describe('test primo-explore-location-item-after', function() {
         browser.waitForAngular();
         browser.sleep(10000);
 
-        expect(browser.protractorImageComparison.checkScreen(browser.params.scenario)).toBeGreaterThan(10);
-        expect(browser.protractorImageComparison.checkScreen(browser.params.scenario)).toBeLessThan(12);
+        expect(browser.protractorImageComparison.checkScreen(browser.params.scenario)).toBeGreaterThan(browser.params.gt);
+        expect(browser.protractorImageComparison.checkScreen(browser.params.scenario)).toBeLessThan(browser.params.lt);
     });
 
     it('The following should show a google maps iframe consistent with the location library', function() {
