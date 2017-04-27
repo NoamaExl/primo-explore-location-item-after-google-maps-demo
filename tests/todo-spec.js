@@ -22,7 +22,7 @@ describe('test primo-explore-location-item-after', function() {
     };
 
     it('General snapshot regression tests', function() {
-        browser.get('http://localhost:8003/primo-explore/fulldisplay?docid=DEMO-ALEPH001399130&context=L&vid=NORTH&lang=en_US&search_scope=LC&adaptor=Local%20Search%20Engine&tab=all_resources&query=any,contains,DEMO-ALEPH001399130&sortby=rank&offset=0');
+        browser.get('http://localhost:8003/primo-explore/fulldisplay?docid='+browser.params.query+'&context=L&vid='+browser.params.vid+'&lang=en_US&query=any,contains,'+browser.params.query+'&sortby=rank&offset=0');
         browser.waitForAngular();
         browser.sleep(10000);
 
@@ -47,7 +47,7 @@ describe('test primo-explore-location-item-after', function() {
                         if (isVisible) {
                             let items = element.all(by.tagName('prm-location-items'));
                             /**********This is the actual tested logic start**********/
-                            let geoLocation = geoMapping['(stack no.127 )'+'NBPER'] || '40.689237, -74.044546';
+                            let geoLocation = geoMapping[browser.params.loc] || '40.689237, -74.044546';
                             /**********This is the actual tested logic end**********/
                             element.all(by.tagName('prm-location-items-after')).each(function(e3){
                                 //browser.waitForAngular();
