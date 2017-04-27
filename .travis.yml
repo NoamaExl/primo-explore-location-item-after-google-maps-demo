@@ -23,9 +23,9 @@
   "script": [
     "webdriver-manager update",
     "sleep 25",
-    "protractor ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/conf.js --params.query DEMO-ALEPH001399130 --params.vid NORTH --params.loc \"(stack no.127 )NBPER\" --params.scenario demo",
+    "protractor ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/conf.js --params.query DEMO-ALEPH001399130 --params.vid NORTH --params.loc \"(stack no.127 )NBPER\" --params.scenario demo --params.gt 10 --params.lt 12",
     "gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js run --view primo-explore-location-item-after-google-maps-demo-master --proxy http://cam-primo.hosted.exlibrisgroup.com:80 &",
-    "protractor ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/conf.js --params.query 44CAM_CAMBRDGEDB4765181 --params.vid 44CAM_PROD --params.loc \"(864.a.421(30) )44CAM_864A+85Z2\" --params.scenario cam"    
+    "protractor ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/conf.js --params.query 44CAM_CAMBRDGEDB4765181 --params.vid 44CAM_PROD --params.loc \"(864.a.421(30) )44CAM_864A+85Z2\" --params.scenario cam --params.gt 3 --params.lt 6"    
   ],
   "os": "linux"
 }
