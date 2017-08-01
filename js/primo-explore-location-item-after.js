@@ -52,6 +52,6 @@ app.component('prmLocationItemsAfter', {
     bindings: {parentCtrl: '<'},
     controller: 'prmLocationItemAfterController',
     template: `<div layout="row" class="layout-full-width"><iframe width="100%" height="450" frameborder="0" style="border:0" 
-        src="{{::$ctrl.getLink()}}" 
+        src="{{$ctrl.getLink()}}" 
         allowfullscreen></iframe></div>`
 });
