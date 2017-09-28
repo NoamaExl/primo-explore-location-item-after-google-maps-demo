@@ -1,7 +1,6 @@
 { 
+  "addons":{"firefox":"latest-esr"},
   "language": "node_js",
-  "addons": 
-      "firefox": "49.0",
   "node_js": "6",
   "install": [
     "npm install",
@@ -31,4 +30,3 @@
   ],
   "os": "linux"
 }
-
