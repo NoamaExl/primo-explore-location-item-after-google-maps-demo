@@ -32,4 +32,4 @@ script:
   )44CAM_864A+85Z2" --params.scenario cam --params.gt 3 --params.lt 6
 os: linux
 addons:
-  firefox: "49.0"
+  firefox: "45.0"
