@@ -1,32 +1,35 @@
-{    
-  "addons":["firefox": "45.0"],
-  "language": "node_js",
-  "node_js": "6",
-  "install": [
-    "npm install",
-    "npm --prefix ./node_modules/primo-explore-devenv install ./node_modules/primo-explore-devenv",
-    "npm install -g gulp",
-    "npm install -g protractor@5.0.0"
-  ],
-  "before_script": [
-    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./css --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/css",
-    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./img --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/img",
-    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./js --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/js",
-    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./html --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/html",
-    "node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./tests --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests",    
-    "gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js run --view primo-explore-location-item-after-google-maps-demo --proxy http://primo-demo.exlibrisgroup.com:1701 &",
-    "gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js custom-css",
-    "gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js custom-js",    
-    "export DISPLAY=:99.0",
-    "sh -e /etc/init.d/xvfb start",
-    "sleep 3"
-  ],
-  "script": [
-    "webdriver-manager update",    
-    "sleep 25",
-    "protractor ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/conf.js --params.query DEMO-ALEPH001399130 --params.vid NORTH --params.loc \"(stack no.127 )NBPER\" --params.scenario demo --params.gt 10 --params.lt 12",
-    "gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js run --view primo-explore-location-item-after-google-maps-demo-master --proxy http://cam-primo.hosted.exlibrisgroup.com:80 &",
-    "protractor ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/conf.js --params.query 44CAM_CAMBRDGEDB4765181 --params.vid 44CAM_PROD --params.loc \"(864.a.421(30) )44CAM_864A+85Z2\" --params.scenario cam --params.gt 3 --params.lt 6"    
-  ],
-  "os": "linux"
-}
+---
+language: node_js
+node_js: '6'
+install:
+- npm install
+- npm --prefix ./node_modules/primo-explore-devenv install ./node_modules/primo-explore-devenv
+- npm install -g gulp
+- npm install -g protractor@5.0.0
+before_script:
+- node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./css --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/css
+- node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./img --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/img
+- node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./js --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/js
+- node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./html --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/html
+- node ./node_modules/primo-explore-devenv/gulp/copyDir.js --from ./tests --to ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests
+- gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js run --view primo-explore-location-item-after-google-maps-demo
+  --proxy http://primo-demo.exlibrisgroup.com:1701 &
+- gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js custom-css
+- gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js custom-js
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
+script:
+- webdriver-manager update
+- sleep 25
+- protractor ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/conf.js
+  --params.query DEMO-ALEPH001399130 --params.vid NORTH --params.loc "(stack no.127
+  )NBPER" --params.scenario demo --params.gt 10 --params.lt 12
+- gulp --gulpfile ./node_modules/primo-explore-devenv/gulpfile.js run --view primo-explore-location-item-after-google-maps-demo-master
+  --proxy http://cam-primo.hosted.exlibrisgroup.com:80 &
+- protractor ./node_modules/primo-explore-devenv/primo-explore/custom/primo-explore-location-item-after-google-maps-demo/tests/conf.js
+  --params.query 44CAM_CAMBRDGEDB4765181 --params.vid 44CAM_PROD --params.loc "(864.a.421(30)
+  )44CAM_864A+85Z2" --params.scenario cam --params.gt 3 --params.lt 6
+os: linux
+addons:
+  firefox: "49.0"
