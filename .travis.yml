@@ -1,6 +1,7 @@
 {    
+  "addons":["firefox": "45.0"],
   "language": "node_js",
-  "node_js": "6.11.2",
+  "node_js": "6",
   "install": [
     "npm install",
     "npm --prefix ./node_modules/primo-explore-devenv install ./node_modules/primo-explore-devenv",
